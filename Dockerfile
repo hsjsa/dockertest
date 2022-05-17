@@ -3,7 +3,7 @@ FROM lzzy12/mega-sdk-python:latest
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
-RUN apt-get -qq update && \
+RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
     apt-get install -y software-properties-common && \
     rm -rf /var/lib/apt/lists/* && \
     apt-add-repository non-free && \
