@@ -1,9 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
 
-RUN apt-get -y update && DEBIAN_FRONTEND="noninteractive" \
+RUN apt-get -qq update && DEBIAN_FRONTEND="noninteractive" \
     apt-get install -y software-properties-common && \
     rm -rf /var/lib/apt/lists/* && \
     apt-add-repository non-free && \
